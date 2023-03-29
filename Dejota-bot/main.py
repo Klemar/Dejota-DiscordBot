@@ -2,7 +2,9 @@ import discord
 from discord.ext import commands
 import os
 
-client = commands.Bot(command_prefix = "-")
+#import bot token
+from bot_token import *
+client = commands.Bot(command_prefix = "!")
 
 @client.event
 async def on_ready():
@@ -11,6 +13,10 @@ async def on_ready():
 @client.command(name="oi")
 async def oi(ctx):
     await ctx.send("Olá")
+
+@client.command(name="criador")
+async def criador(ctx):
+    await ctx.send("Eu fui programado em python por João Pedro Klemar Covos")
 
 @client.command(name="entrar")
 async def entrar(ctx):
@@ -28,4 +34,4 @@ async def sair(ctx):
     else:
         await ctx.send("Eu não estou em um canal de voz")
 
-client.run(os.getenv('token'))
+client.run(token)
