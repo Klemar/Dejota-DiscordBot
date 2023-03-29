@@ -1,5 +1,6 @@
 import discord
 from discord.ext import commands
+import os
 
 client = commands.Bot(command_prefix = "-")
 
@@ -27,4 +28,4 @@ async def sair(ctx):
     else:
         await ctx.send("Eu não estou em um canal de voz")
 
-client.run('MTA5MDMwOTQzMzM1MzA1MjI2MA.GbQf1q.snEN08sMbZnjLYKj3bK6s8pfzFED4qiu52naIA')
+client.run(os.getenv('token'))
